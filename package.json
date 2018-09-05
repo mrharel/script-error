@@ -4,7 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "html-server": "node src/html-server/index.js",
+    "script-server": "node src/script-server/index.js",
+    "script2-server": "node src/script2-server/index.js",
+    "start": "concurrently \"npm:html-server\" \"npm:script-server\" \"npm:script2-server\""
   },
   "repository": {
     "type": "git",
@@ -15,5 +18,9 @@
   "bugs": {
     "url": "https://github.com/mrharel/script-error/issues"
   },
-  "homepage": "https://github.com/mrharel/script-error#readme"
+  "homepage": "https://github.com/mrharel/script-error#readme",
+  "dependencies": {
+    "concurrently": "^4.0.1",
+    "express": "^4.16.3"
+  }
 }
